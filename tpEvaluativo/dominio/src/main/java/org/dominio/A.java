@@ -25,7 +25,7 @@ public class A extends Factura {
 
 	@Override
 	public String toString() {
-		return super.toString() + "IVA " + IVA + "Factura 'A'";
+		return super.toString() + "IVA= " + IVA + " Factura 'A'";
 	}
 
 }

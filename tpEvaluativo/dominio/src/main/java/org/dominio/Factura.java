@@ -34,8 +34,8 @@ public class Factura {
 
 	@Override
 	public String toString() {
-		return "Factura [numero=" + numero + ", cliente=" + cliente.getNombre()
-				+ "]";
+		return "Factura numero=" + numero + ", cliente=" + cliente.getNombre()
+				+ " ";
 	}
 
 }
