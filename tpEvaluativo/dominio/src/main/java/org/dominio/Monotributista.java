@@ -7,8 +7,8 @@ import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable
-@Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
-public class Monotributista extends Cliente{
+@Inheritance(strategy = InheritanceStrategy.NEW_TABLE)
+public class Monotributista extends Cliente {
 
 	public Monotributista() {
 		super();
@@ -23,9 +23,7 @@ public class Monotributista extends Cliente{
 
 	@Override
 	public String toString() {
-		return super.toString();
+		return super.toString() + "Monotributista";
 	}
-
-	
 
 }

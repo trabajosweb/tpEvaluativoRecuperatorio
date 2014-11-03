@@ -7,8 +7,8 @@ import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable
-@Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
-public class ResponsableInscripto extends Cliente{
+@Inheritance(strategy = InheritanceStrategy.NEW_TABLE)
+public class ResponsableInscripto extends Cliente {
 
 	public ResponsableInscripto() {
 		super();
@@ -20,9 +20,10 @@ public class ResponsableInscripto extends Cliente{
 		super(nombre, telefono, cuit, listaFactura);
 		// TODO Auto-generated constructor stub
 	}
+
 	@Override
 	public String toString() {
-		return super.toString();
+		return super.toString() + "Responsable Inscripto";
 	}
 
 }

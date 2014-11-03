@@ -5,7 +5,7 @@ import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable
-@Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
+@Inheritance(strategy = InheritanceStrategy.NEW_TABLE)
 public class B extends Factura {
 
 	public B(int numero, Cliente cliente) {
@@ -15,6 +15,6 @@ public class B extends Factura {
 
 	@Override
 	public String toString() {
-		return super.toString();
+		return super.toString() + "Factura 'B'";
 	}
 }

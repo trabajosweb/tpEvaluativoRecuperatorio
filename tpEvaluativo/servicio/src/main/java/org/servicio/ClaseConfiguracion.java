@@ -21,45 +21,56 @@ En las facturas de tipo A se debe incluir el iva. */
 	public Factura a1() {
 		return new A(0.21, 001, responsableInscripto());
 	}
+
 	@Bean(name = "a2")
 	public Factura a2() {
 		return new A(0.21, 002, responsableInscripto());
 	}
+
 	@Bean(name = "b1")
 	public Factura b1() {
 		return new B(032, responsableInscripto());
 	}
+
 	@Bean(name = "b2")
 	public Factura b2() {
 		return new B(040, responsableInscripto());
 	}
+
 	@Bean(name = "c1")
 	public Factura c1() {
-		return new C(002,monotributista());
+		return new C(002, monotributista());
 	}
+
 	@Bean(name = "c2")
 	public Factura c2() {
-		return new C(003,monotributista());
+		return new C(003, monotributista());
 	}
 
 	@Bean(name = "monotributista")
 	public Cliente monotributista() {
 		return new Monotributista();
 	}
-	
-	@Bean(name = "responsableInscripto")	
+
+	@Bean(name = "responsableInscripto")
 	public Cliente responsableInscripto() {
 		return new ResponsableInscripto();
 	}
 
-	
 	@Bean(name = "RepositorioCliente")
 	public IRepositorio iClienteRepositorio() {
 		return new ClienteRepositorio();
 	}
-	
+
 	@Bean(name = "RepositorioFactura")
 	public IRepositorio iFacturaRepositorio() {
 		return new FacturaRepositorio();
 	}
+
+	@Bean(name = "ServicioCliente")
+	public IServicio servCliente() {
+		return new ClienteServicio();
+	}
+
+	
 }

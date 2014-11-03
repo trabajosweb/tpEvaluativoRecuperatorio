@@ -5,9 +5,10 @@ import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable
-@Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
-public class A extends Factura{
-	Double IVA;
+@Inheritance(strategy = InheritanceStrategy.NEW_TABLE)
+public class A extends Factura {
+
+	private Double IVA;
 
 	public Double getIVA() {
 		return IVA;
@@ -17,15 +18,14 @@ public class A extends Factura{
 		IVA = iVA;
 	}
 
-	public A(Double IVA,int numero, Cliente cliente) {
+	public A(Double IVA, int numero, Cliente cliente) {
 		super(numero, cliente);
-		this.IVA=IVA;
+		this.IVA = IVA;
 	}
 
-	
 	@Override
 	public String toString() {
-		return super.toString()+"IVA "+ IVA;
+		return super.toString() + "IVA " + IVA + "Factura 'A'";
 	}
-	
+
 }

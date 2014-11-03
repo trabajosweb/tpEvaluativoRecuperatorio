@@ -13,29 +13,38 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class FacturaServicio implements IServicio {
 
-	ApplicationContext context = new AnnotationConfigApplicationContext(ClaseConfiguracion.class);
-	IRepositorio repositorio= (IRepositorio) context.getBean("RepositorioFactura");
-	public void guardar() {
+	private IRepositorio repositorio;
 
-	    List<Factura> lista= new ArrayList<Factura>();
+	public IRepositorio getRepositorio() {
+		return repositorio;
+	}
+
+	public void setRepositorio(IRepositorio repositorio) {
+		this.repositorio = repositorio;
+	}
+
+	public void guardar() {
+		ApplicationContext context = new AnnotationConfigApplicationContext(
+				ClaseConfiguracion.class);
+		List<Factura> lista = new ArrayList<Factura>();
 		lista.add((A) context.getBean("a1"));
 		lista.add((A) context.getBean("a2"));
 		lista.add((B) context.getBean("b1"));
 		lista.add((B) context.getBean("b2"));
 		lista.add((C) context.getBean("c1"));
 		lista.add((C) context.getBean("c2"));
-	    for(Factura f: lista)
-		repositorio.guardar(f);
+		repositorio = (IRepositorio) context.getBean("RepositorioFactura");
+		for (Factura f : lista) {
+			getRepositorio().guardar(f);
+		}
 	}
 
 	public void listar() {
-		List<Factura> lista = null;
 		try {
-			lista= repositorio.listar();
-			}
-		catch (Exception e) {
+			getRepositorio().listar();
+		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		} 
+	}
 
 }
